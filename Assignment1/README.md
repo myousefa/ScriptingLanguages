@@ -38,6 +38,6 @@ The test data I created tests files with no OGG files in it. It also tests how i
 
 # How to Run 
 
-To run this program ensure that the shell file is adjacent in the file management to the Music file. If it inside along with the genres it will not run successfully. In ubuntu or MacOS terminal run `./warmup.sh` or `./detailed.sh`. 
+To run this program ensure that the shell files are adjacent to the music directory. If it inside along with the genres it will not run successfully. In ubuntu or MacOS terminal run `./warmup.sh` or `./detailed.sh`. 
 
 This will give you the expected result as seen in the `WarmupOutput.txt` file and `DetailedOutput.txt` file.
