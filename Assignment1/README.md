@@ -22,7 +22,7 @@ Using bash scripts to get a report of the following information:
 
 No sed, awk, Perl, or Python in this section was used
 
-## Part 2 (Detailed Report)
+### Part 2 (Detailed Report)
 Using bash scripts to get a more detailed report of 
 
 1. artists who have albums in more than one genre (in alphabetical order)
@@ -32,7 +32,11 @@ Using bash scripts to get a more detailed report of
 
 I used sed in third part. This was to ensure proper spacing. No awk, Perl, or Python were used in this project. 
 
-## How to Run 
+## Test Data
+
+The test data I created tests files with no OGG files in it. It also tests how it deals with if an artist shows up with more than two disks. It also sees if it handles if one disk is "disk" while the other is "disc." Another test is to see how it handles cross genre multi disk scenarios. Overall the program handled all these situations in an appropriate manner. I did not include files for expected output for these but it is easy to run since it is given as a tar file. 
+
+# How to Run 
 
 To run this program ensure that the shell file is adjacent in the file management to the Music file. If it inside along with the genres it will not run successfully. In ubuntu or MacOS terminal run `./warmup.sh` or `./detailed.sh`. 
 
