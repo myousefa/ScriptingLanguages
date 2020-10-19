@@ -10,7 +10,7 @@ Professor: Dr.Morris Bernstein
 
 This project teaches the fundamnetals of bash scripting. Including experience with pipelining commands, sed, awk, and Perl. 
 
-In the project there is a music directory filled with Genres, artists, album names, dis[c][k]s and songs
+In the project there is a music directory filled with Genres, artists, album names, dis[c][k]s, and songs. The objective of this is to do the following:
 
 ### Part 1 (WarmUp)
 Using bash scripts to get a report of the following information:
@@ -30,8 +30,10 @@ Using bash scripts to get a more detailed report of
 2. multi-disk artists and the albums listed below (in alphabetical order)
 3. Possible Duplicated Albums
 
+I used sed in third part. This was to ensure proper spacing. No awk, Perl, or Python were used in this project. 
+
 ## How to Run 
 
-To run this program ensure that the shell file is outside of the genre's file. In ubuntu or MacOS terminal run `./warmup.sh`.
+To run this program ensure that the shell file is adjacent in the file management to the Music file. If it inside along with the genres it will not run successfully. In ubuntu or MacOS terminal run `./warmup.sh` or `./detailed.sh`. 
 
-This will give you the expected result as seen in the `output.txt` file.
+This will give you the expected result as seen in the `WarmupOutput.txt` file and `DetailedOutput.txt` file.
