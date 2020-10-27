@@ -10,7 +10,7 @@ Professor: Dr.Morris Bernstein
 
 In this class I learned the fundamentals of scripting in Bash, Perl, and Python.
 
-# Class Objectives
+### Class Objectives
 
 
 ## Project Descriptions
