@@ -1,2 +1,2 @@
 #!/bin/bash
-perl test.pl > output.html
+perl generate.pl > output.html
