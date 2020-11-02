@@ -1,6 +1,7 @@
 import sys
 import os
 import json
+
 config = {
     'use_input_file' : True,
     'input_file_loc' : 'input.txt',

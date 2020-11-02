@@ -39,6 +39,8 @@ The test data I created tests files with no OGG files in it. It also tests how i
 
 # How to Run 
 
-To run this program ensure that the python and perl files are adjacent to the music directory. If it inside along with the genres it will not run successfully. In ubuntu or MacOS terminal run `python3 gen_html.py`. This will give you the expected result as seen in the `output.html` file. 
+To run this program ensure that the python and perl files are adjacent to the `input.txt` files. In the Python solution, the user can alter the config dictionary that is within the `gen_html.py` and set the location of the input file and additionally the data location, in case they would like to read from the directory directly. 
+
+In ubuntu or MacOS terminal run `python3 gen_html.py`. This will give you the expected result as seen in the `output.html` file. 
 
 For the Perl file run the script `./gen_html.sh` script to get the output in the `output.html` file.
