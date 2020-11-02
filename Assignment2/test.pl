@@ -39,16 +39,58 @@ sub read_file {
     return %music_db
 }
 
+sub get_row_span{
+    my %music_db = %{$_[0]};
+    my $artist = $_[1];
+    my $num_projects = 0;
+    while ((my $album, my $album_details) = each %{$music_db{$artist}} ){
+        $num_projects+=1;
+    }
+    return $num_projects;
+}
 
+sub create_album_row {
+    my $album_details = $_[0];
+    my $album = $_[1];
+    print('<td>',$album,'</td>');
+    print('<td><table border="0">');
+    foreach my $track ( @$album_details ){
+        print('<tr><td><a href="{path_2_track}">',$track,'</a></td></tr>');
+    }
+    print('</table></td>');
+}
 
 my %music_db = read_file();
 #print Dumper(\%music_db);
-# #print(%music_db);
-foreach my $artist (keys %music_db){
-    while ((my $album, my @album_details) = each %{$music_db{$artist}} ){
-        print($artist,"--> ",@album_details," --> ", @album_details[0]);
-        foreach my $track ( @album_details ){
-            print($track);
-        }
+
+# Print the top of the HTML
+print('<html><body>');
+print('<table border="1"><tr><th>Artist</th><th>Album</th><th>Tracks</th></tr>');
+foreach my $artist (sort keys %music_db){
+    my $num_projects = get_row_span(\%music_db,\$artist);
+    my $project_counter = 0;
+    
+    foreach my $album (sort keys %{ $music_db{$artist} } ){
+        my $album_details = %{$artist{$album}};
+        
+        print($album_details);
     }
+
+    # while ((my $album, my $album_details) = each %{$music_db{$artist}} ){
+
+    #     if($project_counter == 0){
+    #         print('<tr><td rowspan="',$num_projects,'">',$artist,'</td>');
+    #         create_album_row($album_details,$album);
+    #         print('</tr>');
+    #     }
+    #     else{
+    #         print('<tr>');
+    #         create_album_row($album_details,$album);
+    #         print('</tr>')
+    #     }
+    #     $project_counter += 1;
+    # }
+    # print('</tr>');
 }
+print('</table>');
+print('</body></html>');
