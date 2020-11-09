@@ -7,6 +7,8 @@
 
 
 # Get first line 
-find . -type f | grep \.awk
+find . -iname '*.awk' -print |
+while read filename; do
+    test -n "$(sed -n -e "/#!.*awk/p ; 1q" $filename)" && sed -i '1s|local/||' $filename ; 
+done 
 # Modify line
-

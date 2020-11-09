@@ -19,7 +19,7 @@
 # ----------- WORKING SOLUTION -----------
 ls -1 | 
 while read i ; do 
-    [ -f "$i" ] && head -1 "$i" | 
-    egrep -qs '^#!' && sudo chmod a+x "$i" | 
+     test -f "$i" && head -1 "$i" | 
+    egrep -qs '^#!' && chmod a+x "$i" | 
     echo "$i"; 
 done
