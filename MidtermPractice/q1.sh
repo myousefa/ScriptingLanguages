@@ -20,6 +20,6 @@
 ls -1 | 
 while read i ; do 
      test -f "$i" && head -1 "$i" | 
-    egrep -qs '^#!' && chmod a+x "$i" | 
+    egrep -qs '^#!' && sudo chmod a+x "$i" | 
     echo "$i"; 
 done

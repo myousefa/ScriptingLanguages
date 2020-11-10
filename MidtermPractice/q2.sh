@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-# Problem2
+#  Problem2
 #  Find all awk scripts under the current directory and change the #! line from /usr/local/bin/gawk
 #  to /usr/bin/gawk
 
@@ -9,6 +9,6 @@
 # Get first line 
 find . -iname '*.awk' -print |
 while read filename; do
-    test -n "$(sed -n -e "/#!.*awk/p ; 1q" $filename)" && sed -i '1s|local/||' $filename ; 
+    sed -e "s/#! *\/usr\/local\/bin\/gawk/#!\/usr\/bin\/gawk/g" $filename 
 done 
 # Modify line
