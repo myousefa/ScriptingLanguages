@@ -1,0 +1,8 @@
+test data/test sub dir/child dir
+test data/test sub dir/child dir 2/baby dir
+test data/test sub dir/child dir 2/baby dir 2
+test data/test sub dir/child dir 2/baby dir 3
+test data/test sub dir 2/test sub dir/child dir
+test data/test sub dir 2/test sub dir/child dir 2/baby dir
+test data/test sub dir 2/test sub dir/child dir 2/baby dir 2
+test data/test sub dir 2/test sub dir/child dir 2/baby dir 3

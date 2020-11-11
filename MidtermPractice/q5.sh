@@ -12,7 +12,7 @@
 
 # Part A
 cp -R test\ dir\ 1/ poop/ 
-rm -rf test\ dir\ 1/
+
 
 
 # Part B
