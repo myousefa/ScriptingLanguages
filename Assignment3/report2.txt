@@ -1,0 +1,33 @@
+Summary:
+total cookies in baseline =  501
+empty cookies in baseline =  93
+non-empty cookies in baseline =  408
+total cookies in test =  501
+empty cookies in test =  91
+non-empty cookies in test =  410
+non-empty cookies in baseline only =  408
+non-empty cookies in test only =  410
+non-empty cookies in both =  405
+non-empty cookies in either =  413
+
+Segments with added cookies: 0 / 7697
+
+Segments with missing cookies: 10 / 7697
+0	F09828_11542	1	['410cf09f7a1f84cfa40ed7720ec7b7a0']
+1	F09828_13690	1	['410d1b2c00b2149f8e44a277aef431c4']
+2	F09828_13785	1	['410d570d6d7c477470162a4085ac7f13']
+3	F09828_15306	1	['410d1b2c00b2149f8e44a277aef431c4']
+4	L11278_10120	1	['410cf3f5b3eb64a108cbaaba3c0dbcd8']
+5	L11278_11323	2	['410cf3f5b3eb64a108cbaaba3c0dbcd8', '410cbebe2980368cfd12d9819b82649c']
+6	L11278_12272	1	['410cf3f5b3eb64a108cbaaba3c0dbcd8']
+7	L11278_12344	1	['410cf3f5b3eb64a108cbaaba3c0dbcd8']
+8	L11278_12348	1	['410cf3f5b3eb64a108cbaaba3c0dbcd8']
+9	L11278_12365	1	['410cf3f5b3eb64a108cbaaba3c0dbcd8']
+
+Cookies in extra segments: 0 / 501
+
+Cookies omitted from segments: 3 / 501
+0	410cb8c8857b9b81efef06448ee4e4dc	3	['D08734_73920', 'D08734_73923', 'D08734_73929']
+1	410d570d6d7c477470162a4085ac7f13	18	['F09828_10665', 'F09828_13785', 'D08734_73923', 'F09828_13760', 'F09828_14804', 'F09828_14803', 'F09828_13824', 'F09828_15310', 'F09828_15208', 'F09828_14875', 'F09828_12161', 'F09828_12219', 'F09828_12193', 'D08734_73920', 'D08734_73948', 'F09828_12170', 'F09828_14183', 'F09828_12306']
+2	410d57454b642389947f2f5ad7eb1697	21	['F09828_10665', 'D08734_73923', 'D08734_73920', 'F09828_13760', 'F09828_14804', 'F09828_14186', 'F09828_13907', 'F09828_14803', 'F09828_15208', 'F09828_0', 'F09828_13537', 'F09828_15244', 'F09828_15315', 'F09828_14875', 'F09828_12161', 'F09828_12219', 'F09828_12193', 'F09828_13657', 'F09828_11875', 'F09828_12170', 'F09828_14183']
+
