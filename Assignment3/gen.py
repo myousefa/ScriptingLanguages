@@ -78,7 +78,7 @@ def gen_uniq_map(baseMap, comparisonMap, addedMap, missingMap):
     for key in baseMap:
         if key not in comparisonMap:
             comparisonMap[key] = set()
-        if (baseMap[key] and not comparisonMap[key]):
+        if (baseMap[key] ^ comparisonMap[key]):
             if (comparisonMap[key] - baseMap[key]):
                 addedMap[key] = comparisonMap[key] - baseMap[key]
             else: 

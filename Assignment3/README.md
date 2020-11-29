@@ -14,7 +14,7 @@ This program reads in two log files and converts it into four dictionaries. The 
 
 Sounding simple to get started by spliting the project into two parts. Read further on what each part consisted of. 
 
-### Part 1 : Get Summary
+### Part 1 : Get Rundown/Summary
 The first part of the project was creating the dictionaries and outputting the summary that had the following information: 
 
 1. total cookies in baseline
@@ -28,7 +28,7 @@ The first part of the project was creating the dictionaries and outputting the s
 9. non-empty cookies in both
 10. non-empty cookies in either
 
-This process was quite easy and just consisted of getting all the information into the map and doing basic calculations based on the len of the map and setting to the appropriate information
+This process was quite easy and just consisted of getting all the information into the map and doing basic computations based on the len of the map and setting to the appropriate information
 
 ### Part 2 : Final Report
 The second part of the project took a lot more time and more testing. In this part after filling the maps I created a method that does a series of checks. They checked for: 
@@ -40,10 +40,9 @@ The second part of the project took a lot more time and more testing. In this pa
 
 ## Test Data
 
-For test data I took a small subset of the provided data and put it into the .log files
+For the test data I generated a small data set so the run times are quick and show off proof of concept that this program should work for any data sample size. 
 
 # How to Run 
-To run the program in command line run `python3 gen.py evaluator-integration-baseline.log evaluator-integration.log > example.txt`
+To run the program in command line run `python3 gen.py test-baseline.log test-comp.log > expectedOut.txt`
 
-NOTE: `baseline.log` file MUST come before the comparison .log file
-NOTE2: `example.txt` file can be compared to my expected output stored in `report.txt`. 
+NOTE: `test-baseline.log` file MUST come before the comparison .log file
