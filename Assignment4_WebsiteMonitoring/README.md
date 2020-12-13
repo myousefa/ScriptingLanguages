@@ -19,9 +19,6 @@ The purpose of this project is to delve further into python scripting. In this p
 ### Part 3 : Dashboard
 
 ## Test Data
-I did not provide test data however included are example outputs and my performance plot diagrams to display the request handling for the website. 
+I did not provide test data; however, included are example outputs and my performance plot diagrams to display the request handling for the website. 
 
 # How to Run 
-To run the program in command line run `python3 gen.py test-baseline.log test-comp.log > expectedOut.txt`
-
-NOTE: `test-baseline.log` file MUST come before the comparison .log file
