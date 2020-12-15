@@ -11,7 +11,7 @@ default_port = 8080
 # Process cmd line args
 parser = argparse.ArgumentParser()
 parser.add_argument('--url', type = str)
-parser.add_argument('--rps', type = float)
+parser.add_argument('--rps', type = int)
 parser.add_argument('--jitter', type = float)
 args = parser.parse_args()
 
@@ -26,12 +26,36 @@ if jitter < 0.1:
 elif jitter > 1:
     jitter = 1
 
-lower_bound = rps*(1.0-jitter)
-upper_bound = rps*(1.0+jitter)
+lower_bound = int(rps*(1.0-jitter))
+upper_bound = int(rps*(1.0+jitter))
 
+print(lower_bound)
+print(upper_bound)
 print(jitter)
 # ---------------------------------- Initial set up done ----------------------------------
 
 # Generate Requests to url
 while True:
-    ji
+    start_time = time.time()
+    jittery_rps = int(random.uniform(lower_bound,upper_bound))
+
+    #this needs to be jittery rps
+    for i in range(jittery_rps): 
+        calculate_request = random.randint(0,100)
+        try:
+            if calculate_request in range(0,10):
+                # generate 404 error
+                urllib2.urlopen(url + "/404")
+            elif calculate_request in range(10,20):
+                # generate 500 error
+                urllib2.urlopen(url + "/fail")
+            else:
+                # generate 200 type (Successful request)
+                urllib2.urlopen(url)
+        except urllib2.HTTPError:
+            continue
+    # Calculate total time running
+    end_time = time.time()
+    elapsed_time = end_time-start_time
+
+
