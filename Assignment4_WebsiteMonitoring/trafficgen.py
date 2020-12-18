@@ -56,10 +56,10 @@ while True:
             continue
     end_time = time.time()
     elapsed_time = 1-(end_time-start_time)
-    if elapsed_time > 0:
-        time.sleep(elapsed_time)
-    else: 
-        continue
+    # if elapsed_time > 0:
+    #     time.sleep(elapsed_time)
+    # else: 
+    #     continue
     
 
 

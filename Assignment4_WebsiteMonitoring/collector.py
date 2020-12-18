@@ -16,7 +16,7 @@ out_file = 'data.tsv'
 parser = argparse.ArgumentParser()
 parser.add_argument('--interval', type = int, default = 10)
 parser.add_argument('--url', type = str)
-parser.add_argument('--time_running', type = int, default = 60)
+parser.add_argument('--time_running', type = int, default = 360)
 args = parser.parse_args()
 
 # Put them into usable fields
