@@ -54,8 +54,12 @@ while True:
                 urllib2.urlopen(url)
         except urllib2.HTTPError:
             continue
-    # Calculate total time running
     end_time = time.time()
-    elapsed_time = end_time-start_time
+    elapsed_time = 1-(end_time-start_time)
+    if elapsed_time > 0:
+        time.sleep(elapsed_time)
+    else: 
+        continue
+    
 
 
