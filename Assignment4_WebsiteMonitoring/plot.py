@@ -5,6 +5,24 @@ import argparse
 import sys
 import os
 
+def RPR(data):
+    """
+    Requests Per Record
+    This function calculates the neumber of requests
+    that occured in each record by finding the diff between
+    the current and the last record
+    """
+    res = []
+    for rt,req_type in enumerate(data):
+        record = []
+        record.append(req_type[0])
+        for i in range(1,len(req_type)):
+            diff = data[rt][i] - data[rt][i-1]
+            record.append(diff)
+        res.append(record)
+    return res
+
+
 
 def grab_data():
     data = []
@@ -27,7 +45,11 @@ def grab_data():
     data.append(data_200)
     data.append(data_404)
     data.append(data_500)
-
+    
+    # Currently, the data summates as it goes
+    # Find the diff by each record
+    data = RPR(data)
+    
     # Set up for RPM
     rpm_200 = np.zeros( (len(data[0])//6),) 
     rpm_404 = np.zeros( (len(data[0])//6),) 
@@ -63,6 +85,9 @@ def grab_data():
     plt.plot(rps_data[1],color='g')
     plt.plot(rps_data[2],color='b')
 
-    plt.savefig("graph.png")
+    plt.xlabel('time (minutes)')
+    plt.ylabel('RPS (in minutes)')
+    plt.legend(('200s', '500s', '404s'))
+    plt.savefig("graph2.png")
     
 grab_data()
