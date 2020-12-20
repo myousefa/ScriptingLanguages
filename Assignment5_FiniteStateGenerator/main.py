@@ -7,7 +7,9 @@ m.header("""
 #include <iostream>
 #include <string>
 #include <time.h>
+
 using namespace std;
+
 char * now() {
   time_t rawtime;
   time(&rawtime);
@@ -40,6 +42,8 @@ Event get_next_event() {
    cin >> event_string;
    return string_to_event(event_string);
 }
+
+
 int main() {
     int result = hos(OFF_DUTY_STATE);
     return result >= 0 ? EXIT_SUCCESS : EXIT_FAILURE;
