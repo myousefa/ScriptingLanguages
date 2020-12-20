@@ -10,36 +10,39 @@ char * now() {
   return ctime (&rawtime);
 }
 
+#include <iostream>
 using namespace std;
-  enum State {
-    s_OFF_DUTY,
-    s_ON_DUTY_STATIONARY,
-    s_ON_DUTY_MOVING,
-    s_END,
+
+enum State {
+    OFF_DUTY_STATE,
+    ON_DUTY_STATIONARY_STATE,
+    ON_DUTY_MOVING_STATE,
+    END_STATE,
   };
-  enum Event {
-    e_OFF_DUTY,
-    e_START,
-    e_STOP,
-    e_ON_DUTY,
-    e_END,
+enum Event {
+    START_EVENT,
+    ON_DUTY_EVENT,
+    END_EVENT,
+    STOP_EVENT,
+    OFF_DUTY_EVENT,
+		INVALID_EVENT
   };
 
 const char * Event_NAMES[] = {
-	"OFF_DUTY"
 	"START"
-	"STOP"
 	"ON_DUTY"
 	"END"
+	"STOP"
+	"OFF_DUTY"
 };
 Event get_next_event();
 
 Event string_to_event(string event_string) {
-	if (event_string == "OFF_DUTY") {return "OFF_DUTY_EVENT";}
 	if (event_string == "START") {return "START_EVENT";}
-	if (event_string == "STOP") {return "STOP_EVENT";}
 	if (event_string == "ON_DUTY") {return "ON_DUTY_EVENT";}
 	if (event_string == "END") {return "END_EVENT";}
+	if (event_string == "STOP") {return "STOP_EVENT";}
+	if (event_string == "OFF_DUTY") {return "OFF_DUTY_EVENT";}
 	return INVALID_EVENT;
 }
 
@@ -48,7 +51,7 @@ int hos(State initial_state) {
 	while (true) {
 		switch(state) {
 
-      case s_OFF_DUTY:
+      case OFF_DUTY_STATE:
         // code for OFF_DUTY_STATE
 
         event = get_next_event();
@@ -68,7 +71,7 @@ cout << "driver coming on duty " << now();
           break;
         }
         break;
-      case s_ON_DUTY_STATIONARY:
+      case ON_DUTY_STATIONARY_STATE:
         cout << "driver is stationary" << endl;
 
         event = get_next_event();
@@ -83,7 +86,7 @@ cout << "driver coming on duty " << now();
           break;
         }
         break;
-      case s_ON_DUTY_MOVING:
+      case ON_DUTY_MOVING_STATE:
         cout << "driver is moving" << endl;
 
         event = get_next_event();
@@ -94,7 +97,7 @@ cout << "driver coming on duty " << now();
           break;
         }
         break;
-      case s_END:
+      case END_STATE:
         
         event = get_next_event();
         switch (event) {

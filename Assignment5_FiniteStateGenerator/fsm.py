@@ -51,15 +51,17 @@ class Machine(object):
 	def gen(self):
 		# header stuff
 		print(self._header)
-		print("using namespace std;")
-		iprint(1, "enum State {")
+		print("#include <iostream>")
+		print("using namespace std;\n")
+		print("enum State {")
 		for s in self.states.keys():
-			iprint(2, f"s_{s},")
+			iprint(2, f"{s}_STATE,")
 		iprint(1, "};")
 
-		iprint(1, "enum Event {")
+		print("enum Event {")
 		for e in self.event_names:
-			iprint(2, f"e_{e},")
+			iprint(2, "{0}_EVENT,".format(e))
+		print("		INVALID_EVENT")
 		iprint(1, "};")
 
 		print()
@@ -79,7 +81,7 @@ class Machine(object):
         
 		print(FDECL.format(name=self.name))
 		for s, (action, edges) in self.states.items():
-			iprint(3, f"case s_{s}:")
+			iprint(3, f"case {s}_STATE:")
 			iprint(4, action)
 			iprint(4, "event = get_next_event();")
 			iprint(4, "switch (event) {")
