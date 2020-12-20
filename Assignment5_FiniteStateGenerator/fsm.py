@@ -18,9 +18,9 @@ class Edge(object):
 		self.action = action
 
 	def emit(self):
-		iprint(5, f"case e_{self.event}:")
+		iprint(5, f"case {self.event}_EVENT:")
 		iprint(6, self.action)
-		iprint(6, f"state = s_{self.next_state};")
+		iprint(6, f"state = {self.next_state}_STATE;")
 		iprint(5, "break;")
 
 class Machine(object):
@@ -46,8 +46,11 @@ class Machine(object):
 		self.event_names.add(event)
 		return Edge(event, next_state, action)
 
-	def edges(self, *args):
-		pass
+	def edges(self, *_edges):
+		edges_list = []
+		for _edge in _edges:
+			edges_list.append(self.edge(_edge[0], _edge[1]))
+		return edges_list
 
 	def gen(self):
 		# header stuff
@@ -86,20 +89,16 @@ class Machine(object):
         
 		# hos [machine header]
 		print(FDECL.format(name=self.name))
-		for s,v in self.states.items():
+		for s,(action,edges) in self.states.items():
 			iprint(3, "case {0}_STATE:".format(s))
-			iprint(4, 'cerr << "state{0}" << endl;'.format(s))
+			iprint(4, 'cerr << "state {0}" << endl;'.format(s))
 			if s in self.states.keys():
-				iprint(4, v[0])
+				iprint(4, action)
 			iprint(4, 'event = get_next_event();')
 			iprint(4, 'cerr << "event " << EVENT_NAMES[event] << endl;')
 			iprint(4, 'switch (event) {')
-			if s in self.event_names():
-				for e in self.event_names[s]:
-					iprint(5, "hello")
-					iprint(5, 'case {0}_EVENT:'.format(s))
-					iprint(5, 'state = {0}_STATE;'.format(s))
-					iprint(5, 'break;')
+			for e in edges:
+				e.emit()
 			iprint(4, 'default:')
 			iprint(5, 'cerr << "INVALID EVENT " << event << "in state {0} " << endl;'.format(s))
 			iprint(5, 'return -1;')
