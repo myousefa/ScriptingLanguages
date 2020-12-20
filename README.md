@@ -37,4 +37,18 @@ Assignment 2 -- Generating HTML website with built in file management using pyth
 
 Assignment 3 -- Logging and generating maps and comparing maps using python
 
-Assignment 4 -- 
+Assignment 4 -- Creating website requests, collecting data, and using MatPlotLib to visualize the data
+
+Assignmetn 5 -- Implemented a Finite State Machine Generator in Python that writes a basic FSM in C++
+
+## Midterm Practice --
+
+Practice is in bash, awk, sed, or Perl. Some practice done using python
+
+## Final Practice -- 
+
+Only used Python for this exam so all practice is done in python. 
+
+## Final Takeaways
+
+I would say I was quite successful in completing the class objectives for this course. I now have new techniques in my toolbelt that are very practical. I also have gotten first hand experience in bash scripting, perl scripting, and python scripting. Some of these skills will definitely carry into my programming career and others I feel will not (perl scripting). Very useful class definitely reccommend to all UWB students. 
